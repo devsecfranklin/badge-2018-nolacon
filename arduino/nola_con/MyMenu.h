@@ -15,6 +15,9 @@
 #ifndef MY_MENU_H
 #define MY_MENU_H
 
+#include <string>
+
+
 class MyMenu{
   public:
     const String myHandle = "@nola_con";
@@ -24,6 +27,11 @@ class MyMenu{
     int total; //total menu items on page
     int ledpattern;
 
+    String menu_page_1[4] = { "bling", "network", "games", "about" };
+    String menu_page_2[4] = { "Cyber Police", "rainbow", "white" "gradient" };
+    String menu_page_3[3] = { "Deauth", "Scanner", "Mesh" };
+    String menu_page_4[1] = { "Burgess Pong" };
+                               
     void show_menu();
 };
 

@@ -15,6 +15,8 @@
 #ifndef MY_LED_H
 #define MY_LED_H
 
+#include <APA102.h>
+
 class MyLed {
   public:
     void ledCallback();
@@ -22,6 +24,8 @@ class MyLed {
     void rainbow();
     void ytCracker();
     void gradient();
+
+    rgb_color hsvToRgb(uint16_t, uint8_t, uint8_t);
 };
 
 #endif // MY_LED_H
