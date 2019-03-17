@@ -35,6 +35,7 @@ MyNetwork::MyNetwork() {
   WiFiIndex = 0;
   WiFiCount = 0;
   DisplayUpdate = true;
+  WiFi.softAPdisconnect (true);
 }
 
 int MyNetwork::MyNetStatus() {

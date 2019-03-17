@@ -30,14 +30,15 @@ class MyGame {
     int switch4 = 1;         // ENTER  D10
 
     void drawCourt(Adafruit_SSD1306 *display);
+    void setup(Adafruit_SSD1306 *display);
     void burgess_pong(Adafruit_SSD1306 *display);
 
   private:
     // ******************* burgess pong game *********************
     // shamelssly stolen from:  https://github.com/eholk/Arduino-Pong/blob/master/pong.ino
-    const unsigned long PADDLE_RATE = 99;
-    const unsigned long BALL_RATE = 256;
-    const uint8_t PADDLE_HEIGHT = 12;
+    const unsigned long PADDLE_RATE = 33;
+    const unsigned long BALL_RATE = 16;
+    const uint8_t PADDLE_HEIGHT = 24;
 
     uint8_t ball_x = 64, ball_y = 32;
     uint8_t ball_dir_x = 1, ball_dir_y = 1;
