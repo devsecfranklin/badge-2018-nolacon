@@ -8,7 +8,7 @@ git:
   quiet: true
 env:
   global:
-    - BD="esp8266:esp8266:nodemcuv2:CpuFrequency=80,FlashSize=4M3M"
+    - BD="esp8266:esp8266:nodemcuv2:xtal=80,eesz=4M3M"
     - PRETTYNAME="NolaCon Badge 2018"
     - ARDUINO_IDE_VERSION="1.8.6"
       #- DOXYFILE: $TRAVIS_BUILD_DIR/DEAD10C5/NolaCon_2018/arduino/nola_con/Doxyfile
@@ -34,7 +34,3 @@ script:
   #- arduino --verify --board $BD $PWD/DEAD10C5/NolaCon_2018/arduino/nola_con/nola_con.ino
   - arduino --verify --board $BD /usr/local/share/arduino/libraries/NolaCon_2018/arduino/hardware_test/hardware_test.ino
   - arduino --verify --board $BD /usr/local/share/arduino/libraries/NolaCon_2018/arduino/nola_con/nola_con.ino
-notifications:
-  email:
-    on_success: change
-    on_failure: change

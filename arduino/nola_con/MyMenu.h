@@ -15,15 +15,24 @@
 #ifndef MY_MENU_H
 #define MY_MENU_H
 
+#include <string>
+
+
 class MyMenu{
   public:
     const String myHandle = "@nola_con";
     String myText; 
     int page;  // page number
     int inv;   // which menu item to invert
-    int total; //total menu items on page
     int ledpattern;
 
+    String my_menu[4][5] = {
+      { "bling", "games", "network", "about", "" },
+      { "Cyber Police", "rainbow", "white", "gradient", "" },
+      { "Mesh", "Scanner", "Deauth", "", "" },
+      { "Burgess Pong", "", "", "", "" }
+    };
+                               
     void show_menu();
 };
 

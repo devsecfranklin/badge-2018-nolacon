@@ -10,7 +10,7 @@
  *                                                    
  * Author : @theDevilsVoice @p0lr_ @mzbat
  * Date   : May 26, 2018
- * Version: 0.5
+ * Version: 0.6
  */
 
 #ifndef NOLA_H
@@ -23,7 +23,7 @@
 #include <APA102.h>
 
 
-const String version = "0.5";
+const String version = "0.6";
 
 // Define which pins to use.
 const uint8_t dataPin = 12; // D6
