@@ -9,7 +9,7 @@
 
    Author : @theDevilsVoice @p0lr_ @mzbat @dead10c5
    Date   : May 26, 2018
-   Version: 0.5
+   Version: 0.6
 */
 
 
@@ -34,11 +34,8 @@ MyLed myled;
 #define OLED_RESET 2
 Adafruit_SSD1306 display(OLED_RESET);
 
-/*
-#if (SSD1306_LCDHEIGHT != 64)
-#pragma message("Height incorrect, please fix Adafruit_SSD1306.h!")
-#endif
-*/
+#define CLR(x,y) (x&=(~(1<<y)))
+#define SET(x,y) (x|=(1<<y))
 
 // Create an object for writing to the LED strip.
 APA102<dataPin, clockPin> ledStrip;
@@ -102,37 +99,53 @@ void loop() {
 void show_menu () {
 
   display.setTextSize(1);
+  display.setCursor(0, 0);
+  
+  for(int a = 0; a < 5; a = a + 1 ){
+    char *curr_item = new char[16];
+    mymenu.my_menu[mymenu.page][a].toCharArray(curr_item, 16);
+    if (!(strcmp(curr_item, ""))) {
+      if (mymenu.inv == a) {
+        display.setTextColor(BLACK, WHITE);
+        display.println(mymenu.my_menu[mymenu.page][a]);
+        display.setTextColor(WHITE);
+      } else {
+        display.println(mymenu.my_menu[mymenu.page][a]);
+      }
+    }
+  }
 
+/*
   // display main menu page
   if (mymenu.page == 1) {
     display.setCursor(0, 0);
     if (mymenu.inv == 1) {
       display.setTextColor(BLACK, WHITE);
-      display.println("bling");
+      display.println(mymenu.menu_page_1[4][1]);
       display.setTextColor(WHITE);
     } else {
       display.println("bling");
     }
     if (mymenu.inv == 2) {
       display.setTextColor(BLACK, WHITE);
-      display.println("games");
+      display.println(mymenu.menu_page_1[4][2]);
       display.setTextColor(WHITE);
     } else {
-      display.println("games");
+      display.println(mymenu.menu_page_1[4][2]);
     }
     if (mymenu.inv == 3) {
       display.setTextColor(BLACK, WHITE);
-      display.println("network");
+      display.println(mymenu.menu_page_1[4][3]);
       display.setTextColor(WHITE);
     } else {
-      display.println("network");
+      display.println(mymenu.menu_page_1[4][3]);
     }
     if (mymenu.inv == 4) {
       display.setTextColor(BLACK, WHITE);
-      display.println("about");
+      display.println(mymenu.menu_page_1[4][4]);
       display.setTextColor(WHITE);
     } else {
-      display.println("about");
+      display.println(mymenu.menu_page_1[4][4]);
     }
     display.display();
   }  // page1
@@ -142,24 +155,24 @@ void show_menu () {
     display.setCursor(0, 0);
     if (mymenu.inv == 1) {
       display.setTextColor(BLACK, WHITE);
-      display.println("Cyber Police");
+      display.println(mymenu.menu_page_2[4][1]);
       display.setTextColor(WHITE);
     } else {
-      display.println("Cyber Police");
+      display.println(mymenu.menu_page_2[4][1]);
     }
     if (mymenu.inv == 2) {
       display.setTextColor(BLACK, WHITE);
-      display.println("rainbow");
+      display.println(mymenu.menu_page_2[4][2]);
       display.setTextColor(WHITE);
     } else {
-      display.println("rainbow");
+      display.println(mymenu.menu_page_2[4][2]);
     }
     if (mymenu.inv == 3) {
       display.setTextColor(BLACK, WHITE);
-      display.println("white");
+      display.println(mymenu.menu_page_2[4][3]);
       display.setTextColor(WHITE);
     } else {
-      display.println("white");
+      display.println(mymenu.menu_page_2[4][3]);
     }
     if (mymenu.inv == 4) {
       display.setTextColor(BLACK, WHITE);
@@ -168,15 +181,7 @@ void show_menu () {
     } else {
       display.println("gradient");
     }
-    /*
-      if (mymenu.inv == 5) {
-      display.setTextColor(BLACK, WHITE);
-      display.println("next");
-      display.setTextColor(WHITE);
-      } else {
-      display.println("next");
-      }
-    */
+
     display.display();
   }  // page2
 
@@ -220,7 +225,7 @@ void show_menu () {
     }
     display.display();
   }
-
+*/
 } // show_menu()
 
 int button_press(String button_num) {
@@ -293,22 +298,22 @@ int button_press(String button_num) {
     // ************* led pattern selection ***********
     if (mymenu.page == 2 && mymenu.inv == 1) {
       mymenu.ledpattern = 1;
-      //ledCallback();
+      ledCallback();
       return 0;
     }
     if (mymenu.page == 2 && mymenu.inv == 2) {
       mymenu.ledpattern = 2;
-      //ledCallback();
+      ledCallback();
       return 0;
     }
     if (mymenu.page == 2 && mymenu.inv == 3) {
       mymenu.ledpattern = 3;
-      //ledCallback();
+      ledCallback();
       return 0;
     }
     if (mymenu.page == 2 && mymenu.inv == 4) {
       mymenu.ledpattern = 5; // gradient pattern
-      //ledCallback();
+      ledCallback();
       return 0;
     }
 
