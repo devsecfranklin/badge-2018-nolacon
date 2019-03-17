@@ -72,9 +72,8 @@ void setup() {
   pinMode(switchPin3, INPUT_PULLUP);
   pinMode(switchPin4, INPUT_PULLUP);
 
-  mymenu.inv = 1;
-  mymenu.page = 1;
-  mymenu.total = 3;
+  mymenu.inv = 0;
+  mymenu.page = 0;
 
 }
 
@@ -100,11 +99,10 @@ void show_menu () {
 
   display.setTextSize(1);
   display.setCursor(0, 0);
-  
   for(int a = 0; a < 5; a = a + 1 ){
-    char *curr_item = new char[16];
-    mymenu.my_menu[mymenu.page][a].toCharArray(curr_item, 16);
-    if (!(strcmp(curr_item, ""))) {
+    char *curr_item = new char[32];
+    mymenu.my_menu[mymenu.page][a].toCharArray(curr_item, 32);
+    if (!(curr_item == NULL) || !(*curr_item == '\0')) {
       if (mymenu.inv == a) {
         display.setTextColor(BLACK, WHITE);
         display.println(mymenu.my_menu[mymenu.page][a]);
@@ -114,118 +112,8 @@ void show_menu () {
       }
     }
   }
+  display.display();
 
-/*
-  // display main menu page
-  if (mymenu.page == 1) {
-    display.setCursor(0, 0);
-    if (mymenu.inv == 1) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_1[4][1]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println("bling");
-    }
-    if (mymenu.inv == 2) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_1[4][2]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println(mymenu.menu_page_1[4][2]);
-    }
-    if (mymenu.inv == 3) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_1[4][3]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println(mymenu.menu_page_1[4][3]);
-    }
-    if (mymenu.inv == 4) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_1[4][4]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println(mymenu.menu_page_1[4][4]);
-    }
-    display.display();
-  }  // page1
-
-  // all the bling
-  if (mymenu.page == 2) {
-    display.setCursor(0, 0);
-    if (mymenu.inv == 1) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_2[4][1]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println(mymenu.menu_page_2[4][1]);
-    }
-    if (mymenu.inv == 2) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_2[4][2]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println(mymenu.menu_page_2[4][2]);
-    }
-    if (mymenu.inv == 3) {
-      display.setTextColor(BLACK, WHITE);
-      display.println(mymenu.menu_page_2[4][3]);
-      display.setTextColor(WHITE);
-    } else {
-      display.println(mymenu.menu_page_2[4][3]);
-    }
-    if (mymenu.inv == 4) {
-      display.setTextColor(BLACK, WHITE);
-      display.println("gradient");
-      display.setTextColor(WHITE);
-    } else {
-      display.println("gradient");
-    }
-
-    display.display();
-  }  // page2
-
-  //network
-  if (mymenu.page == 3) {
-    display.setCursor(0, 0);
-    if (mymenu.inv == 1) {
-      display.setTextColor(BLACK, WHITE);
-      display.println("wifi scan");
-      display.setTextColor(WHITE);
-    } else {
-      display.println("wifi scan");
-    }
-    if (mymenu.inv == 2) {
-      display.setTextColor(BLACK, WHITE);
-      display.println("mqtt");
-      display.setTextColor(WHITE);
-    } else {
-      display.println("mqtt");
-    }
-    if (mymenu.inv == 3) {
-      display.setTextColor(BLACK, WHITE);
-      display.println("desync");
-      display.setTextColor(WHITE);
-    } else {
-      display.println("desync");
-    }
-    //display.println(mymenu.inv);
-    display.display();
-  }
-
-  // games
-  if (mymenu.page == 4) {
-    display.setCursor(0, 0);
-    if (mymenu.inv == 1) {
-      display.setTextColor(BLACK, WHITE);
-      display.println("burgess pong");
-      display.setTextColor(WHITE);
-    } else {
-      display.println("burgess pong");
-    }
-    display.display();
-  }
-*/
 } // show_menu()
 
 int button_press(String button_num) {
@@ -242,136 +130,137 @@ int button_press(String button_num) {
   int my_butt = button_num.toInt();
 
   // UP button pressed
-  if (my_butt == 1 && mymenu.inv > 1) {
+  if (my_butt == 1 && mymenu.inv > 0) {
     mymenu.inv -= 1;
     return 0;
   }
 
   // DOWN button pressed
-  if (my_butt == 2 && mymenu.inv < mymenu.total) {
+  if (my_butt == 2) {
     mymenu.inv++;
     return 0;
   }
   // BACK button pressed
-  if (my_butt == 3 && mymenu.page > 1) {
-    mymenu.page = 1;
+  if (my_butt == 3 && mymenu.page > 0) {
+    mymenu.page = 0;
     return 0;
   }
   // enter button pressed
+
+  
+  
   if (my_butt == 4) {
-    if (mymenu.page == 1 && mymenu.inv == 1) {
+
+    /*
+    for (int b = 0; b < 4; b = b++ ){
+      mymenu.page
+      mymenu.inv
+    } */
+    
+    if (mymenu.page == 0 && mymenu.inv == 0) {
       // page 2 (bling)
       mymenu.page++;
-      mymenu.inv = 1;   // set to invert first item
-      mymenu.total = 4; // match number of items in bling menu
+      mymenu.inv = 0;   // set to invert first item
       return 0;
     }
-    if (mymenu.page == 1 && mymenu.inv == 2) {
-      // page 3 (games)
+    if (mymenu.page == 0 && mymenu.inv == 1) {
+      // page 3 (network)
       mymenu.page = 3;
-      mymenu.inv = 1;     // set to invert first item
-      mymenu.total = 1;  //match number of items in games menu
+      mymenu.inv = 0;     // set to invert first item
+      //mymenu.total = 1;  //match number of items in games menu
       return 0;
     }
-    if (mymenu.page == 1 && mymenu.inv == 3) {
-      // page 4 (network)
+    if (mymenu.page == 0 && mymenu.inv == 2) {
+      // page 4 (games)
       mymenu.page = 4;
-      mymenu.inv = 1;     // set to invert first item
-      mymenu.total = 3;  //match number of items in network menu
+      mymenu.inv = 0;     // set to invert first item
       return 0;
     }
-    if (mymenu.page == 1 && mymenu.inv == 4) {
+    if (mymenu.page == 0 && mymenu.inv == 3) {
       // call the about() function
       about();
       return 0;
     }
 
-    /*
-      if (mymenu.page == 1 && mymenu.inv == 4) {
-       // page 4 (network)
-       mymenu.page = 4;
-       mymenu.inv = 1;
-       return 0;
-      }
-    */
-
     // ************* led pattern selection ***********
-    if (mymenu.page == 2 && mymenu.inv == 1) {
+    if (mymenu.page == 1 && mymenu.inv == 0) {
+      mymenu.ledpattern = 0;
+      ledCallback();
+      return 0;
+    }
+    if (mymenu.page == 1 && mymenu.inv == 1) {
       mymenu.ledpattern = 1;
       ledCallback();
       return 0;
     }
-    if (mymenu.page == 2 && mymenu.inv == 2) {
+    if (mymenu.page == 1 && mymenu.inv == 2) {
       mymenu.ledpattern = 2;
       ledCallback();
       return 0;
     }
-    if (mymenu.page == 2 && mymenu.inv == 3) {
-      mymenu.ledpattern = 3;
+    if (mymenu.page == 1 && mymenu.inv == 3) {
+      mymenu.ledpattern = 3; // gradient pattern
       ledCallback();
-      return 0;
-    }
-    if (mymenu.page == 2 && mymenu.inv == 4) {
-      mymenu.ledpattern = 5; // gradient pattern
-      ledCallback();
-      return 0;
-    }
-
-    // ************* game selection ***********
-    if (mymenu.page == 3 && mymenu.inv == 1) {
-      mygame.burgess_pong(&display);
       return 0;
     }
 
     // ************* network tool selection ***********
-    if (mymenu.page == 4 && mymenu.inv == 1) {
+    if (mymenu.page == 2 && mymenu.inv == 0) {
       // wireless scanner
       return 0;
     }
     // ************* network tool selection ***********
-    if (mymenu.page == 4 && mymenu.inv == 2) {
+    if (mymenu.page == 2 && mymenu.inv == 1) {
       // mqtt
       return 0;
     }
-    if (mymenu.page == 4 && mymenu.inv == 3) {
+    if (mymenu.page == 2 && mymenu.inv == 2) {
       // desync
       return 0;
     }
+
+    // ************* game selection ***********
+    if (mymenu.page == 3 && mymenu.inv == 0) {
+      mygame.burgess_pong(&display);
+      return 0;
+    }
+
+  
   }
 
 } // button_press()
 
 /*
-   The buttons will break you out of the current LED pattern
-*/
+ *  The buttons will break you out of the current LED pattern
+ */
 
 int break_butts() {
   if (digitalRead(switchPin1) == LOW) {               // check if the button is pressed
     // reset menu
-    mymenu.inv == 1;
-    mymenu.page == 1;
+    mymenu.inv == 0;
+    mymenu.page == 0;
     // turn off LED pattern
     mymenu.ledpattern = 4;
     ledCallback();
     button_press("1");
     return 1;
   } else if (digitalRead(switchPin2) == LOW) {
-    mymenu.inv == 1;
-    mymenu.page == 1;
+    mymenu.inv == 0;
+    mymenu.page == 0;
     mymenu.ledpattern = 4;
     ledCallback();
     button_press("2");
     return 1;
   } else if (digitalRead(switchPin3) == LOW) {
-    mymenu.inv == 1;
-    mymenu.page == 1;
+    mymenu.inv == 0;
+    mymenu.page == 0;
     mymenu.ledpattern = 4;
     ledCallback();
     button_press("3");
     return 1;
   } else if (digitalRead(switchPin4) == LOW) {
-    mymenu.inv == 1;
-    mymenu.page == 1;
+    mymenu.inv == 0;
+    mymenu.page == 0;
     mymenu.ledpattern = 4;
     ledCallback();
     button_press("4");
@@ -380,25 +269,27 @@ int break_butts() {
     return 0;
   }
 
-  //return 0;
-
 } //break_butts()
 
 void ledCallback() {
 
-  if (mymenu.ledpattern == 1) {
+  if (mymenu.ledpattern == 0) {
     cyberPolice();
   }
 
-  if (mymenu.ledpattern == 2) {
+  if (mymenu.ledpattern == 1) {
     rainbow();
   }
 
   // send increasing white only
-  if (mymenu.ledpattern == 3) {
+  if (mymenu.ledpattern == 2) {
     ytCracker();
   }
 
+  // random solid colors
+  if (mymenu.ledpattern == 3) {
+    gradient();
+  }
   // turn off leds
   if (mymenu.ledpattern == 4) {
     for (uint16_t i = 0; i < ledCount; i++) {
@@ -406,11 +297,7 @@ void ledCallback() {
     }
     ledStrip.write(colors, ledCount, 0);
   }
-
-  // random solid colors
-  if (mymenu.ledpattern == 5) {
-    gradient();
-  }
+  
 } // ledCallback()
 
 
@@ -457,6 +344,7 @@ void cyberPolice() {
     delay(200);
   }
 }
+
 void rainbow() {
   yield();
   mymenu.myText = "   Laissez\n   les bon\n     temps\n    roulez";
