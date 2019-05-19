@@ -423,9 +423,6 @@ void about() {
   }
 }
 
-
-
-
 // This function sends a white color with the specified power,
 // which should be between 0 and 7905.
 void sendWhite(uint16_t power)
@@ -452,7 +449,3 @@ void sendWhite(uint16_t power)
   // approximately equal to power.
   ledStrip.sendColor(brightness8Bit, brightness8Bit, brightness8Bit, brightness5Bit);
 }
-
-
-
-

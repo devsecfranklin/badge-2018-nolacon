@@ -9,7 +9,7 @@
 
    Author : @theDevilsVoice @p0lr_ @mzbat
    Date   : May 15, 2018
-   Version: 0.5
+   Version: 0.6
 */
 #include "MyGame.h"
 #include "MyNetwork.h"
@@ -22,7 +22,8 @@ void MyGame::setup(Adafruit_SSD1306 *display) {
 
   // turn off wifi
   WiFi.softAPdisconnect (true);
-
+  WiFi.mode(WIFI_OFF);
+  
   // Display the splash screen (we're legally required to do so)
   display->display();
   unsigned long start = millis();

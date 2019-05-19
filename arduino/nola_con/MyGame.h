@@ -9,7 +9,7 @@
 
    Author : @theDevilsVoice @p0lr_ @mzbat
    Date   : May 15, 2018
-   Version: 0.5
+   Version: 0.6
 */
 
 #ifndef MY_GAME_H
@@ -36,8 +36,8 @@ class MyGame {
   private:
     // ******************* burgess pong game *********************
     // shamelssly stolen from:  https://github.com/eholk/Arduino-Pong/blob/master/pong.ino
-    const unsigned long PADDLE_RATE = 33;
-    const unsigned long BALL_RATE = 16;
+    const unsigned long PADDLE_RATE = 1;
+    const unsigned long BALL_RATE = 1;
     const uint8_t PADDLE_HEIGHT = 24;
 
     uint8_t ball_x = 64, ball_y = 32;
