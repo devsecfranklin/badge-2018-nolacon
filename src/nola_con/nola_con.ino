@@ -19,7 +19,6 @@
 #include <APA102.h>
 
 #include "nola.h"
-#include "MyGame.h"
 #include "MyLed.h"
 #include "MyMenu.h"
 #include "MyNetwork.h"
@@ -27,7 +26,6 @@
 // Initialize instance of MyNetwork() class
 MyNetwork mynetwork;
 MyMenu mymenu;
-MyGame mygame;
 MyLed myled;
 
 //SSD1306 display(0x3c, D2, D1);
@@ -147,8 +145,6 @@ int button_press(String button_num) {
   }
   // enter button pressed
 
-  
-  
   if (my_butt == 4) {
 
     /*
@@ -168,12 +164,6 @@ int button_press(String button_num) {
       mymenu.page = 3;
       mymenu.inv = 0;     // set to invert first item
       //mymenu.total = 1;  //match number of items in games menu
-      return 0;
-    }
-    if (mymenu.page == 0 && mymenu.inv == 2) {
-      // page 4 (games)
-      mymenu.page = 4;
-      mymenu.inv = 0;     // set to invert first item
       return 0;
     }
     if (mymenu.page == 0 && mymenu.inv == 3) {
@@ -218,16 +208,7 @@ int button_press(String button_num) {
       // desync
       return 0;
     }
-
-    // ************* game selection ***********
-    if (mymenu.page == 3 && mymenu.inv == 0) {
-      mygame.burgess_pong(&display);
-      return 0;
-    }
-
-  
   }
-
 } // button_press()
 
 /*

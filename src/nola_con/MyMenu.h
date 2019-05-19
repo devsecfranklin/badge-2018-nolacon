@@ -27,11 +27,10 @@ class MyMenu{
     int ledpattern;
 
     String my_menu[4][5] = {
-      { "bling1", network", "about"},
+      { "bling", network", "about" },
       { "Cyber Police", "rainbow", "white", "gradient"},
-      { "Mesh", "Scanner", "Deauth", "Empty"}
+      { "Mesh", "Scanner", "Deauth" }
     };
-                               
     void show_menu();
 };
 
