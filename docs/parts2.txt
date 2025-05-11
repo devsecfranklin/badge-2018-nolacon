@@ -1,0 +1,36 @@
+Partlist
+
+Exported from nola4.brd at 3/6/18 10:01 PM
+
+EAGLE Version 8.6.3 Copyright (c) 1988-2018 Autodesk, Inc.
+
+Assembly variant: 
+
+Part     Value                               Package                      Library           Position (mm)         Orientation
+
+ESP12E   ESP12E_DEVKIT                       ESP12E_DEVKIT                ESP12E_DEVKIT     (66.83 78.865)        MR0
+IC1      FT232RL                             SSOP28                       ftdichip          (90.844428125 69.801390625) MR0
+JP1      OLED                                1X04                         pinhead           (66.863484375 49.80989375) R0
+LED1     APA1025050                          APA102_5050                  jos-ph            (107.940109375 81.5854375) R0
+LED2     APA1025050                          APA102_5050                  jos-ph            (107.7593375 56.961659375) R0
+LED3     APA1025050                          APA102_5050                  jos-ph            (94.907003125 34.96619375) R0
+LED4     APA1025050                          APA102_5050                  jos-ph            (66.683171875 14.930759375) R0
+LED5     APA1025050                          APA102_5050                  jos-ph            (39.08078125 34.62321875) R0
+LED6     APA1025050                          APA102_5050                  jos-ph            (24.1393 56.470346875) R0
+LED7     APA1025050                          APA102_5050                  jos-ph            (23.9873875 80.344715625) R0
+LED8     APA1025050                          APA102_5050                  jos-ph            (66.594246875 123.24236875) R0
+PWR      JST-PH_2-PIN_HEADER                 JST_B2B-PH_HEADER            SRG               (110.250740625 67.293625) MR270
+R1       470?                                R0805                        rcl               (94.55105625 77.54654375) MR0
+R2       470?                                R0805                        rcl               (56.13835625 106.296496875) MR180
+R3       10K?                                R0805                        rcl               (86.858015625 61.014075) MR0
+R4       10K?                                R0805                        rcl               (61.630709375 106.241515625) MR180
+R5       10K?                                R0805                        rcl               (94.050803125 61.130925) MR0
+R6       10K?                                R0805                        rcl               (46.1974375 78.878584375) MR0
+R7       470?                                R0805                        rcl               (46.16065625 63.638590625) MR0
+R8       10K?                                R0805                        rcl               (94.525315625 83.44938125) MR0
+R9       10K?                                R0805                        rcl               (88.5275125 83.43644375) MR0
+S1       BACK                                B3F-10XX                     switch-omron      (44.7170875 55.075134375) R180
+S2       LEFT                                B3F-10XX                     switch-omron      (44.88508125 44.3937125) R180
+S3       ENTER                               B3F-10XX                     switch-omron      (88.8524875 54.887525) R180
+S4       RIGHT                               B3F-10XX                     switch-omron      (89.008721875 44.382609375) R180
+S5       MOMENTARY-SWITCH-SPST-SMD-6.0X3.5MM CKN10388CT-ND                SparkFun-Switches (44.027403125 70.6112875) MR0

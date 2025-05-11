@@ -11,7 +11,7 @@
 
  * @section author Author
  * 
- * Written by @theDevilsVoice for @dead10c5
+ * Written by @theDevilsVoice
  * 
    Date   : Oct 11, 2018
    Version: 0.6

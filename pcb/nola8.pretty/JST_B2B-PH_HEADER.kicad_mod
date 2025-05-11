@@ -1,0 +1,152 @@
+(footprint "JST_B2B-PH_HEADER"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "3-pin JST PH Shrouded Header\n2.0mm pitch\nP/N B3B-PH-K-S.  Mating plug PHR-3")
+	(property "Reference" "REF**"
+		(at -2.925 -2.6825 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "9623cfaf-173d-4894-b821-ce7210842146")
+		(effects
+			(font
+				(size 0.747776 0.747776)
+				(thickness 0.065024)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "bb78a8d3-1004-4bb1-b349-2a6afe89ff0d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "44fe93be-674d-413b-a8c1-2b067487bfdd")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ba81e8bc-560b-4ed7-bdf3-155041ed8c7e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2bf15e50-5af1-49da-b03a-fae10d9cb04e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -2.875 -2.3825)
+		(end 2.975 -2.3825)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e8e8d71d-3722-4d42-ae0a-99e0ecc94fea")
+	)
+	(fp_line
+		(start -2.875 2.1175)
+		(end -2.875 -2.3825)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "be458d46-f949-4f53-b6b2-4586e4873c58")
+	)
+	(fp_line
+		(start 2.975 -2.3825)
+		(end 2.975 2.1175)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "accf111b-c143-4552-a2fa-086b66187e9a")
+	)
+	(fp_line
+		(start 2.975 2.1175)
+		(end -2.875 2.1175)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8c13c8b4-a046-4d56-933c-032a93d7ecb2")
+	)
+	(fp_poly
+		(pts
+			(xy -0.3175 2.060468) (xy 0.3175 2.060468) (xy 0.3175 1.425468) (xy -0.3175 1.425468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill solid)
+		(layer "F.SilkS")
+		(uuid "6b4013cc-1c83-4729-b04f-42cee8a67ac9")
+	)
+	(fp_text user "1"
+		(at 0.875 1.635 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "6d2baf93-50d2-4701-a0cb-a6eefc2ebfb4")
+		(effects
+			(font
+				(size 0.747776 0.747776)
+				(thickness 0.065024)
+			)
+			(justify left bottom)
+		)
+	)
+	(pad "P1" thru_hole oval
+		(at 1.075 -0.0475 90)
+		(size 2.4 1.2)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "78e8e5aa-e435-4bb5-a19a-f377fa21c8ed")
+	)
+	(pad "P2" thru_hole oval
+		(at -0.925 -0.0475 90)
+		(size 2.4 1.2)
+		(drill 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "f38ce058-b0a8-457c-b405-6b91b9542d55")
+	)
+)
