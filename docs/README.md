@@ -1,7 +1,8 @@
+
+# Documentation
+
 ## generate
 
-Run 
-
-```
+```sh
 doxygen ../arduino/nola_con/Doxyfile
 ```

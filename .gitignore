@@ -1,3 +1,50 @@
+# For PCBs designed using KiCad: http://www.kicad-pcb.org/
+# Format documentation: http://kicad-pcb.org/help/file-formats/
+
+# Temporary files
+*auto_saved_files*
+_build/
+_test/
+*-drc.txt
+kibot_errors.filter
+*.zip
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+.pio/build/*
+*.sch-bak
+*~
+_autosave-*
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+fp-lib-table
+#auto_saved_files#
+report.txt
+
+# Netlist files (exported from Eeschema)
+*.net
+
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
+
+# Ignore list for Eagle, a PCB layout tool
+bmp.scr
+
+# Exported BOM files
+*.xml
+
+# Backup files
+*.s#?
+*.b#?
+*.l#?
+*.d#?
+
 .vscode/ipch
 
 # Ignore list for Eagle, a PCB layout tool
@@ -54,3 +101,31 @@ firmware.*
 # docs
 docs/html
 docs/latex
+
+esp32/firmware/build
+.~lock.*
+firmware.*
+.codelite
+*.kicad_pro-bak
+# KiBot files
+Generated/ 
+
+Makefile
+Makefile.in
+config.in~
+configure
+configure~
+config/
+config/install-sh
+config/missing
+#aclocal
+aclocal.m4
+autom4te.cache/
+config.status
+config.log
+COPYING
+INSTALL
+libtool
+config.in
+po/
+stamp-h1

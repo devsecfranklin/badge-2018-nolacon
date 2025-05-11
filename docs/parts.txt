@@ -1,0 +1,10 @@
+digikey
+
+768-1007-1-ND
+296-2105-5-ND
+1568-1800-ND
+https://www.digikey.com/product-detail/en/jst-sales-america-inc/S2B-PH-K-S(LF)(SN)/455-1719-ND/926626&?gclid=EAIaIQobChMIzMPL-oyI2QIVQrXACh2x3gABEAQYASABEgK8bPD_BwE
+455-1719-ND right angle JST 2 pin connector
+
+replace the shifter with this after prototype
+https://www.mouser.com/productdetail/?qs=3JMERSakebo64R9QzkDdAQ%3D%3D

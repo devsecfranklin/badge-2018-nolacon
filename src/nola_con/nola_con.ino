@@ -7,7 +7,7 @@
    |____/|_____(_)_/   \_\____/(_)_|\___/(_)\____|____/
 
 
-   Author : @theDevilsVoice @p0lr_ @mzbat @dead10c5
+   Author : @theDevilsVoice
    Date   : May 26, 2018
    Version: 0.6
 */
@@ -397,9 +397,7 @@ void about() {
     display.println("Created by the\n DE:AD:10:C5\n");
     display.setTextColor(WHITE);
     display.println("Version: " + version );
-    display.println("\n@mzbat");
-    display.println("@p0lr_");
-    display.println("@theDevilsVoice");
+    display.println("\n@theDevilsVoice");
     display.display();
   }
 }
